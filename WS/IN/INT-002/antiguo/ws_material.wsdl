@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions targetNamespace="http://muramuebles.cl/portal/PORTAL-VENTAS/WS/IN/INT-002/ws_material_prueba.php?wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://muramuebles.cl/portal/PORTAL-VENTAS/WS/IN/INT-002/ws_material_prueba.php?wsdl">
+ <wsdl:documentation>
+  <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+ </wsdl:documentation>
+ <wsdl:types>
+  <xsd:schema targetNamespace="http://muramuebles.cl/portal/PORTAL-VENTAS/WS/IN/INT-002/ws_material_prueba.php?wsdl" xmlns:xi0="http://muramuebles.cl/portal/PORTAL-VENTAS/WS/IN/INT-002/ws_material_prueba.php?wsdl" xmlns="http://muramuebles.cl/portal/PORTAL-VENTAS/WS/IN/INT-002/ws_material_prueba.php?wsdl">
+   <xsd:complexType name="Materiales">
+    <xsd:sequence>
+     <xsd:element name="Materiales" type="MaterialesIn" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="MaterialesIn">
+    <xsd:sequence>
+     <xsd:element name="matnr" type="xsd:string"/>
+     <xsd:element name="meins" type="xsd:string"/>
+     <xsd:element name="ean11" type="xsd:string"/>
+     <xsd:element name="numtp" type="xsd:string"/>
+     <xsd:element name="spart" type="xsd:string"/>
+     <xsd:element name="vtext" type="xsd:string"/>
+     <xsd:element name="maktx" type="xsd:string"/>
+     <xsd:element name="vkorg" type="xsd:string"/>
+     <xsd:element name="vtweg" type="xsd:string"/>
+     <xsd:element name="mvke" type="xsd:string"/>
+     <xsd:element name="bezei" type="xsd:string"/>
+     <xsd:element name="prodh" type="xsd:string"/>
+     <xsd:element name="vtext1" type="xsd:string"/>
+     <xsd:element name="vtext2" type="xsd:string"/>
+     <xsd:element name="vtext3" type="xsd:string"/>
+     <xsd:element name="lines" type="xsd:string"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="RegistrarMaterialRequestType">
+    <xsd:sequence>
+     <xsd:element name="material" type="Materiales"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="RegistrarMaterialResponseType">
+    <xsd:sequence>
+     <xsd:element name="return" type="retorno"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="retorno">
+    <xsd:sequence>
+     <xsd:element name="return" type="xsd:string"/>
+    </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="RegistrarMaterial" type="RegistrarMaterialRequestType"/>
+   <xsd:element name="RegistrarMaterialResponse" type="RegistrarMaterialResponseType"/>
+  </xsd:schema>
+ </wsdl:types>
+ <wsdl:message name="RegistrarMaterial">
+  <wsdl:part name="RegistrarMaterial" element="tns:RegistrarMaterial"/>
+ </wsdl:message>
+ <wsdl:message name="RegistrarMaterialResponse">
+  <wsdl:part name="RegistrarMaterialResponse" element="tns:RegistrarMaterialResponse"/>
+ </wsdl:message>
+ <wsdl:portType name="ServicioMaterialesAfoodsPortType">
+  <wsdl:operation name="RegistrarMaterial">
+   <wsdl:input message="tns:RegistrarMaterial"/>
+   <wsdl:output message="tns:RegistrarMaterialResponse"/>
+  </wsdl:operation>
+ </wsdl:portType>
+</wsdl:definitions>
