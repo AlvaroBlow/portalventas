@@ -1,19 +1,20 @@
-<?php //include("header.php");?>
-<?php
 
-/*if($accion=="desconectarse"){
-	
-$_SESSION['DESTINATARIO']='0';
-session_destroy();
-
-}*/
-
-?>
-     
-
-
-
-<article id="post-3105" class="post-3105 page type-page status-publish hentry">
+                
+        <?php include("header.php"); ?>
+		
+ 
+		<h2 class="title30 font-bold text-uppercase sub_title">Listado Usuarios Cliente</h2>
+		
+ 		
+		
+		
+		
+		
+		
+		
+		
+		
+		<article id="post-3105" class="post-3105 page type-page status-publish hentry">
                                 <h2 class="title-page">Acceso a Mi Cuenta</h2>
 								<div class="entry-content">
 									<div class="woocommerce"><div class="woocommerce-notices-wrapper"></div>
@@ -21,7 +22,6 @@ session_destroy();
 		<form class="woocommerce-form woocommerce-form-login login" method="post">
 
 <p>
-<?php echo @$mensaje; ?>
 </p>
 			
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
@@ -49,11 +49,7 @@ session_destroy();
 
 </div>
 																	</div><!-- .entry-content -->
-							</article>	 
-	 
-	 
-	 
-	 
-	 
-                        
+							</article>
+		
+		
 <?php include("footer.php"); ?>    
