@@ -1,12 +1,12 @@
 <?php include("header.php");?>
 <?php
 
-if($accion=="desconectarse"){
+/*if($accion=="desconectarse"){
 	
 $_SESSION['DESTINATARIO']='0';
 session_destroy();
 
-}
+}*/
 
 ?>
      
