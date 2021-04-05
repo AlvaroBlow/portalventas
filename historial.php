@@ -56,7 +56,7 @@ if ($result->num_rows > 0) {
 
 ?>	
        <tr>
-                  <td><a href='' >PW_<?php echo $ID_INTERNO; ?></a></td>
+                  <td id="Tdpedido"><input type="hidden" name="idInterno" value="<?php echo base64_encode(base64_encode($ID_INTERNO)); ?>"/> PW_<?php echo $ID_INTERNO; ?></td>
                   <td><?php echo $NUMERO_PEDIDO_SAP; ?></td>
                   <td><?php echo $DESTINATARIO; ?></td>
                   <td><?php echo $FECHA_PEDIDO; ?></td>
@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
                
               </tbody>
             </table>	 
-
+<div id="detallePedido"></div>
 <script  type='text/javascript'>
 
 jQuery(document).ready(function() {
@@ -78,7 +78,18 @@ jQuery(document).ready(function() {
 	$('li:empty').remove();
 	
 	
-	
+	$("#Tdpedido").click(function(){
+		var ax_pedido = $("#idInterno").val();
+		
+		$.ajax({
+			type : "POST",
+			url	 : "",
+			data : {"axPedido":ax_pedido},
+			success: function(data){
+				$("#detallePedido").html(data);
+			}
+		});
+	});
 	
 });
 
