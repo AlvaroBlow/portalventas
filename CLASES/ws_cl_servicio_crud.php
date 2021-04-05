@@ -9,8 +9,7 @@ class CRUD
 		
 		try{
 			
-
-		$cn = odbc_connect("DRIVER={SQL Server};Server=".$server.";Database=".$bdd.";Persist Security Info=False;", "".$usuario."", "".$pswd."");
+		$cn =  mysqli_connect("191.232.184.42", "portal_ventas", "Servidores.2015++", "portal_ventas");	
 			
 			if(!$cn){
 				throw new Exception('Error al conectar. ' . $thiscn );
@@ -37,7 +36,7 @@ class CRUD
 		
 		try{
 			
-			$result = odbc_exec($cn, $sql);
+			$result = mysqli_query($cn, $sql);
 			
 			if(!$result){
 				$retorno = false;
@@ -64,7 +63,7 @@ class CRUD
 		
 		try{
 				
-			$result = odbc_exec($cn , $sql );
+			$result = mysqli_query($cn , $sql );
 			
 			if(!$result){
 				$retorno = false;
@@ -88,7 +87,7 @@ class CRUD
 		//echo $sql . "<br>";
 		try{
 			
-			$result = odbc_exec($cn , $sql );
+			$result = mysqli_query($cn , $sql );
 			
 			if(!$result){
 				throw new Exception('Error al eliminar registros. <br>Delete : ' . $sql . '<br>');
@@ -110,13 +109,13 @@ class CRUD
 		
 		try{
 			
-			$db = odbc_exec($cn, $sql );
+			$db = mysqli_query($cn, $sql );
 			
 			if(!$db){
 				throw new Exception('Error al seleccionar los datos. ' . $sql . '<br>');
 			}else{
 				
-				$row = odbc_fetch_object($db);
+				$row = mysqli_fetch_object($db);
 			}
 		
 		}catch(Exception $e){
@@ -142,13 +141,13 @@ class CRUD
 		
 		try{
 			
-			$db = odbc_exec($cn, $sql);
+			$db = mysqli_query($cn, $sql);
 			
 			if(!$db){
 				throw new Exception('Error al Seleccionar los Datos. ' . $sql . '<br>');
 			}else{
 			
-				while($v = odbc_fetch_array($db)){
+				while($v = mysqli_fetch_array($db)){
 					
 					$row[] = $v;
 				
@@ -176,12 +175,12 @@ class CRUD
 		
 		try{
 			
-			$db = odbc_exec($cn, $sql);
+			$db = mysqli_query($cn, $sql);
 			
 			if(!$db){
 				throw new Exception('Error al contar registro. <br> Select Count : ' . $sql . "<br>");
 			}else{
-				$row = odbc_fetch_object($db);
+				$row = mysqli_fetch_object($db);
 			}
 			
 		}catch(Exception $e){
@@ -204,12 +203,12 @@ class CRUD
 
 		try{
 			
-			$db = odbc_exec($cn, $sql);
+			$db = mysqli_query($cn, $sql);
 			
 			if(!$db){
 				throw new Exception('Error al contar registro. <br> Select Count : ' . $sql . "<br>");
 			}else{
-				$row = odbc_fetch_object($db);
+				$row = mysqli_fetch_object($db);
 			}
 			
 		}catch(Exception $e){
@@ -232,13 +231,13 @@ class CRUD
 		
 		try{
 			
-			$db = odbc_exec($cn,$sql);
+			$db = mysqli_query($cn,$sql);
 
 			if(!$db){
 				throw new Exception('Error en consulta. <br> ' . $sql . '<br>');
 			}else{
 				
-				while($v = odbc_fetch_array($db)){
+				while($v = mysqli_fetch_array($db)){
 					
 					$row[] = $v;
 				
@@ -263,13 +262,13 @@ class CRUD
 		
 		try{
 			
-			$db = odbc_exec($cn,$sql);
+			$db = mysqli_query($cn,$sql);
 
 			if(!$db){
 				throw new Exception('Error en consulta. <br> ' . $sql . '<br>');
 			}else{
 				
-				while($v = odbc_fetch_array($db)){
+				while($v = mysqli_fetch_array($db)){
 					
 					$row[] = $v;
 				
@@ -295,13 +294,13 @@ class CRUD
 
 		try{
 			
-			$db = odbc_exec($cn,$sql);
+			$db = mysqli_query($cn,$sql);
 
 			if(!$db){
 				throw new Exception('Error en consulta. <br> ' . $sql . '<br>');
 			}else{
 				
-				while($v = odbc_fetch_array($db)){
+				while($v = mysqli_fetch_array($db)){
 					
 					$row[] = $v;
 				
