@@ -84,6 +84,34 @@ class detalle_pedido{
 	}
 
 
+	function tabla_detalle(){
+
+
+		$tabla = "<table border='1' cellpacing='0' cellpadding='0'>
+					<tr>
+						<td>CANTIDAD</td>
+						<td>MATERIAL</td>
+						<td>DESCRIPCION</td>
+						<td>VALOR</td>
+					</tr>
+					<tr>";
+
+		$data = $this->get_detalle();
+
+		for ($x=0; $x < count($data); $x++) { 
+			$tabla .= "<td align='center'>".$data[$x]['CANTIDAD']."</td>
+					   <td>".$data[$x]['MATERIAL']."</td>
+					   <td>".$data[$x]['DESCRIPCION']."</td>
+					   <td></td></tr>";
+		}
+
+		$tabla .= "</table>";
+
+		echo $tabla;
+
+	}
+
+
 
 }
 
@@ -93,11 +121,11 @@ $clp->set_pedidoLocal(9);		//Número de Pedido
 $clp->detallePedido();			//Genera detalle Pedido
 $dat = $clp->get_detalle();		//Rescata el detalle de cada material y retorna array con el detalle (materia-cantidad-descripcion)
 $total = $clp->get_total();		//Cantidad Total de cajas
+$clp->tabla_detalle();			//despliega tabla 
 
-echo "Total : " . $total . "<br>";
-echo "<pre>";
-	print_r($dat);
-echo "</pre>";
+
+
+
 
 
 ?>

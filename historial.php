@@ -56,7 +56,7 @@ if ($result->num_rows > 0) {
 
 ?>	
        <tr>
-                  <td>PW_<?php echo $ID_INTERNO; ?></td>
+                  <td><a href='' >PW_<?php echo $ID_INTERNO; ?></a></td>
                   <td><?php echo $NUMERO_PEDIDO_SAP; ?></td>
                   <td><?php echo $DESTINATARIO; ?></td>
                   <td><?php echo $FECHA_PEDIDO; ?></td>
@@ -76,6 +76,10 @@ if ($result->num_rows > 0) {
 jQuery(document).ready(function() {
   // Handler for .ready() called.
 	$('li:empty').remove();
+	
+	
+	
+	
 });
 
 setTimeout(function(){ $('li:empty').remove(); }, 1000);
